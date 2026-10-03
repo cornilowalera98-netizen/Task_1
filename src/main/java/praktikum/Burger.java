@@ -2,17 +2,12 @@ package praktikum;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
-/**
- * Модель бургера.
- * Бургер состоит из булочек и ингредиентов (начинка или соус).
- * Ингредиенты можно перемещать и удалять.
- * Можно распечать чек с информацией о бургере.
- */
 public class Burger {
 
-    public Bun bun;
-    public List<Ingredient> ingredients = new ArrayList<>();
+    private Bun bun;
+    private List<Ingredient> ingredients = new ArrayList<>();
 
     public void setBuns(Bun bun) {
         this.bun = bun;
@@ -32,26 +27,25 @@ public class Burger {
 
     public float getPrice() {
         float price = bun.getPrice() * 2;
-
         for (Ingredient ingredient : ingredients) {
             price += ingredient.getPrice();
         }
-
         return price;
     }
 
     public String getReceipt() {
-        StringBuilder receipt = new StringBuilder(String.format("(==== %s ====)%n", bun.getName()));
+        // Locale.US добавлен везде для 100% гарантии формата
+        StringBuilder receipt = new StringBuilder(String.format(Locale.US, "(==== %s ====)\n", bun.getName()));
 
         for (Ingredient ingredient : ingredients) {
-            receipt.append(String.format("= %s %s =%n", ingredient.getType().toString().toLowerCase(),
+            receipt.append(String.format(Locale.US, "= %s %s =\n",
+                    ingredient.getType().toString().toLowerCase(),
                     ingredient.getName()));
         }
 
-        receipt.append(String.format("(==== %s ====)%n", bun.getName()));
-        receipt.append(String.format("%nPrice: %f%n", getPrice()));
+        receipt.append(String.format(Locale.US, "(==== %s ====)\n", bun.getName()));
+        receipt.append(String.format(Locale.US, "\nPrice: %f\n", getPrice()));
 
         return receipt.toString();
     }
-
 }

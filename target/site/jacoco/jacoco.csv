@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+untitled,praktikum,Bun,2,61,3,7,0,11,3,7,0,5
+untitled,praktikum,IngredientType,0,24,0,0,0,3,0,1,0,1
+untitled,praktikum,Burger,0,137,0,4,0,24,0,9,0,7
+untitled,praktikum,Database,0,106,0,0,0,15,0,3,0,3
+untitled,praktikum,Ingredient,14,77,4,8,6,14,7,8,3,6
+untitled,praktikum,Praktikum,3,56,0,0,1,13,1,1,1,1

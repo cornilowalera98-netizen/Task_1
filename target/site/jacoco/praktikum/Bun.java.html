@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Bun.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">untitled</a> &gt; <a href="index.source.html" class="el_package">praktikum</a> &gt; <span class="el_source">Bun.java</span></div><h1>Bun.java</h1><pre class="source lang-java linenums">package praktikum;
+
+import java.util.Objects;
+
+/**
+ * Модель булочки для бургера.
+ * Булочке можно дать название и назначить цену.
+ */
+public class Bun {
+
+    private String name;
+    private float price;
+
+    // Конструктор
+<span class="fc" id="L15">    public Bun(String name, float price) {</span>
+<span class="fc" id="L16">        this.name = name;</span>
+<span class="fc" id="L17">        this.price = price;</span>
+<span class="fc" id="L18">    }</span>
+
+    // Геттеры
+    public String getName() {
+<span class="fc" id="L22">        return name;</span>
+    }
+
+    public float getPrice() {
+<span class="fc" id="L26">        return price;</span>
+    }
+
+    // Методы equals и hashCode (Сравнение)
+    @Override
+    public boolean equals(Object o) {
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        if (this == o) return true; // Сравнение с собой</span>
+<span class="pc bpc" id="L33" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false; // Проверка на null и тип</span>
+<span class="fc" id="L34">        Bun bun = (Bun) o; // Приведение типа</span>
+<span class="pc bpc" id="L35" title="1 of 4 branches missed.">        return Float.compare(bun.price, price) == 0 &amp;&amp; Objects.equals(name, bun.name); // Сравнение полей</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L40">        return Objects.hash(name, price);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
